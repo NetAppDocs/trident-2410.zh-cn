@@ -106,7 +106,8 @@ NOTE: 在SVM中更新聚合后、该聚合将在Trident中自动更新、方法�
 
 | `useREST` | 用于使用 ONTAP REST API 的布尔参数。
 `useREST`设置为时 `true`，Trident使用ONTAP REST API与后端通信；设置为时 `false`，Trident使用ONTAP ZAPI调用与后端通信。此功能需要使用ONTAP 9.11.1及更高版本。此外、使用的ONTAP登录角色必须有权访问 `ontap` 应用程序。预定义的和角色可以满足这一 `vsadmin` 要求 `cluster-admin` 。从Trident 24.06版和ZAPI.151或更高版本开始、默认情况下会设置为 `true`；更
-`useREST`改为 `false`以使用ONTAP 9 `userREST` ONTAP调用。
+`useREST`改为 `false`以使用ONTAP 9
+`useREST` ONTAP调用。
 `useREST` 完全符合NVMe/TCP要求。 | `true` 对于ONTAP 9.151或更高版本，否则 `false`。 
 
 
