@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: trident-protect/trident-protect-installation.html 
 keywords: install, trident, protect, requirements, registry 
-summary: 如果您的环境符合要求、则可以按照以下步骤安装Trident Protect。 
+summary: 如果您的环境符合要求，您可以按照以下步骤安装Trident Protect。 
 ---
-= 安装和配置Trident Protect
+= 安装并配置Trident Protect
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: 如果您的环境符合要求、则可以按照以下步骤安装Tride
 
 
 [role="lead"]
-如果您的环境满足Trident Protect的要求、您可以按照以下步骤在集群上安装Trident Protect。您可以从NetApp获取Trident Protect、也可以从您自己的私人注册表安装它。如果集群无法访问Internet、则从专用注册表进行安装非常有用。
+如果您的环境满足Trident Protect 的要求，您可以按照以下步骤在集群上安装Trident Protect。您可以从NetApp获取Trident Protect，或者从您自己的私有注册表中安装它。如果您的集群无法访问互联网，从私有注册表安装会很有帮助。
 
 
-NOTE: 默认情况下、Trident Protect会收集有助于处理您可能创建的任何NetApp支持案例的支持信息、包括有关集群和托管应用程序的日志、指标和拓扑信息。Trident Protect会按每日计划将这些支持包发送给NetApp。在安装Trident Protect时、您可以选择禁用此支持包收集。您可以随时手动link:trident-protect-generate-support-bundle.html["生成支持包"]执行此操作。
+NOTE: 默认情况下， Trident Protect 会收集有助于处理您可能提交的任何NetApp支持案例的支持信息，包括集群和受管应用程序的日志、指标和拓扑信息。Trident Protect 会按计划每日向NetApp发送这些支持包。安装Trident Protect 时，您可以选择禁用此支持包集合。您可以手动操作link:trident-protect-generate-support-bundle.html["生成支持包"]随时。
 
 
 
@@ -25,7 +25,7 @@ NOTE: 默认情况下、Trident Protect会收集有助于处理您可能创建�
 
 [role="tabbed-block"]
 ====
-.安装Trident Protect from NetApp
+.从NetApp安装Trident Protect
 --
 .步骤
 . 添加Trident Helm存储库：
@@ -40,7 +40,7 @@ helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-he
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. 使用Helm通过以下命令之一安装Trident Protect。替换 `<name_of_cluster>`为集群名称、此名称将分配给集群并用于标识集群的备份和快照：
+. 使用 Helm 通过以下命令之一安装Trident Protect。代替 `<name_of_cluster>`集群名称将分配给集群，并用于标识集群的备份和快照：
 +
 ** 正常安装Trident Protect：
 +
@@ -48,7 +48,7 @@ helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-** 安装Trident Protect并禁用计划的每日Trident Protect AutoSupport支持包上传：
+** 安装Trident Protect 并禁用每日计划的Trident Protect AutoSupport支持包上传：
 +
 [source, console]
 ----
@@ -59,9 +59,9 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 
 
 --
-.从专用注册表安装Trident Protect
+.从私有注册表安装Trident Protect
 --
-如果您的Trident集群无法访问Internet、则可以从专用映像注册表安装Kubbernetes Protect。在以下示例中、将括号中的值替换为您环境中的信息：
+如果您的 Kubernetes 集群无法访问互联网，您可以从私有镜像仓库安装Trident Protect。在这些示例中，请将括号中的值替换为您环境中的信息：
 
 .步骤
 . 将以下映像提取到本地计算机、更新标记、然后将其推送到您的私人注册表：
@@ -97,7 +97,7 @@ docker tag netapp/controller:24.10.1 <private-registry-url>/controller:24.10.1
 ----
 docker push <private-registry-url>/controller:24.10.1
 ----
-. 创建Trident Protect系统命名空间：
+. 创建Trident Protect 系统命名空间：
 +
 [source, console]
 ----
@@ -121,7 +121,7 @@ kubectl create secret docker-registry regcred --docker-username=<registry-userna
 ----
 helm repo add netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart
 ----
-. 创建一个名为的文件 `protectValues.yaml`。确保它包含以下Trident保护设置：
+. 创建一个名为的文件 `protectValues.yaml`。请确保其中包含以下Trident Protect 设置：
 +
 [source, yaml]
 ----
@@ -149,7 +149,7 @@ webhooksCleanup:
 ----
 helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-. 使用Helm通过以下命令之一安装Trident Protect。替换 `<name_of_cluster>`为集群名称、此名称将分配给集群并用于标识集群的备份和快照：
+. 使用 Helm 通过以下命令之一安装Trident Protect。代替 `<name_of_cluster>`集群名称将分配给集群，并用于标识集群的备份和快照：
 +
 ** 正常安装Trident Protect：
 +
@@ -157,7 +157,7 @@ helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect -f protectValues.yaml
 ----
-** 安装Trident Protect并禁用计划的每日Trident Protect AutoSupport支持包上传：
+** 安装Trident Protect 并禁用每日定期上传的Trident Protect AutoSupport支持包：
 +
 [source, console]
 ----
@@ -171,13 +171,13 @@ helm install trident-protect netapp-trident-protect/trident-protect --set autoSu
 ====
 
 
-== 指定Trident Protect容器资源限制
+== 指定Trident Protect 容器资源限制
 
-安装Trident Protect后、您可以使用配置文件为Trident Protect容器指定资源限制。通过设置资源限制、您可以控制Trident Protect操作占用的集群资源量。
+安装Trident Protect 后，您可以使用配置文件来指定Trident Protect 容器的资源限制。设置资源限制可以控制Trident Protect 操作消耗集群资源的程度。
 
 .步骤
 . 创建一个名为的文件 `resourceLimits.yaml`。
-. 根据您的环境需求、使用Trident Protect容器的资源限制选项填充文件。
+. 根据您的环境需求，在文件中填充Trident Protect 容器的资源限制选项。
 +
 以下示例配置文件显示了可用设置、并包含每个资源限制的默认vaule：
 
