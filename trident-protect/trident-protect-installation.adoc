@@ -48,7 +48,7 @@ helm install trident-protect-crds netapp-trident-protect/trident-protect-crds --
 ----
 helm install trident-protect netapp-trident-protect/trident-protect --set clusterName=<name_of_cluster> --version 100.2410.1 --create-namespace --namespace trident-protect
 ----
-** 安装Trident Protect 并禁用每日计划的Trident Protect AutoSupport支持包上传：
+** 安装Trident Protect 并禁用每日定期上传的Trident Protect AutoSupport支持包：
 +
 [source, console]
 ----

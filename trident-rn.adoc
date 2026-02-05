@@ -48,7 +48,7 @@ WARNING:  `tridentctl`安装程序zip文件中提供的Linux二进制文件是�
 ** 灾难恢复
 ** 应用程序移动性
 +
-link:./trident-protect/learn-about-trident-protect.html["详细了解Trident Protect"](英文)
+link:./trident-protect/learn-about-trident-protect.html["详细了解 Trident Protect"]。
 
 
 

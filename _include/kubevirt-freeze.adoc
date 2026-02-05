@@ -23,7 +23,7 @@ Trident Protect 24.10 在数据保护操作期间不会自动确保 KubeVirt VM 
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=true -n trident-protect
 ----
 .Trident Protect 24.10.1 及更高版本
-从Trident Protect 24.10.1 开始， Trident Protect 会在数据保护操作期间自动冻结和解冻 KubeVirt 文件系统。您也可以使用以下命令禁用此自动行为：
+从 Trident Protect 24.10.1 开始，Trident Protect 在数据保护操作期间自动冻结和解冻 KubeVirt 文件系统。或者，您可以使用以下命令禁用此自动行为：
 
 [source, console]
 ----
